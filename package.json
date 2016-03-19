@@ -1,0 +1,15 @@
+{
+  "name": "myunderscoretutorial",
+  "version": "1.0.0",
+  "description": "This is a tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Justin",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "underscore": "^1.8.3"
+  }
+}
