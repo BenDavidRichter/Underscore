@@ -87,12 +87,6 @@ function loopyTwo(a){
 
 //The following is the _.uniq() exercise...
 
-// Produce a duplicate-free version of the array. If the array has already
-  // been sorted, you have the option of using a faster algorithm.
-  // Aliased as `unique`.
-  
-  $('#unique').append()
-
 var runrunrun = _.uniq(products, selling_points),selling_points;
 
 $('#unique').append(loopyThree(runrunrun));
@@ -106,3 +100,39 @@ function loopyThree(a){
 //in the loopyThree function above I would like to learn how to add spaces
 //between the selling points
 
+//The following is the map exercise...
+
+$('#photosGoHere').append(loopyFour(_.map(products, function(items) {
+	return items.picture_url;
+})));
+
+function loopyFour(a){
+	for (var i = 0; i < a.length; i++) {
+		$('#photosGoHere').attr('src', a[i]);
+		};
+};
+
+// ^^^ I am only getting the last image on the screen, I will come back later ^^^
+
+//The following is the pluck exercise...
+//This was my original code, then I was able to replace the var feathers
+//in each append() below with the _.pluck names above
+
+//var feathers = _.pluck(products, 'name');
+
+$('#plucking').append(loopyFive(_.pluck(products, 'name')));
+
+function loopyFive(a) {
+	for (var i = 0; i < a.length; i++) {
+		$('#plucking').append('<p>' + a[i] + '</p>');
+		};
+	};
+
+//The following is the reduce exercise...
+
+
+
+
+
+
+//The following is the contains exercise...
