@@ -30,14 +30,25 @@ $("#lastcategory").append(lastcategory);
 $("#lastsellingPoints").append(lastsellingPoints[0] + ' ' + lastsellingPoints[1]);
 $("#lastprice").append(lastprice);
 
-
-
 $("#myLastImage").attr("src", picture_url);
+////
 
 var books = _.filter(products, function(item, key) {
-	//return _.each(this, function(category) {
-		return products.category == "books";
+		return item.category == "books";
 	});
-//});
 
-$('#booksAvailable').append(books);
+
+
+$('#booksAvailable').append(loopy(books));
+
+var below = _(products).reject(function(item, key) {
+		return item.price > 20;
+});
+
+$('#below').append(loopy(below));
+
+function loopy(a){
+	for (var i = 0; i < a.length; i++) {
+	 		document.documentElement(a[i].name + '<br>');
+	};
+};

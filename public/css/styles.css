@@ -10,8 +10,17 @@ div {
 	margin-bottom: 5px;
 	margin-right: 5px;
 	/* border: 1px solid black; */
+	/* max-width: 50%; */
 }
 
-#inLine {
+.inLine {
 	display: inline-block;
+}
+
+#floatLeft {
+	float: left;
+}
+
+#booksAvailable {
+	min-height: 200px;
 }
