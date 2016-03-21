@@ -108,7 +108,7 @@ $('#photosGoHere').append(loopyFour(_.map(products, function(items) {
 
 function loopyFour(a){
 	for (var i = 0; i < a.length; i++) {
-		$('#photosGoHere').attr('src', a[i]);
+		$('img#photosGoHere').attr('src', a[i]);
 		};
 };
 
