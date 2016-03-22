@@ -40,7 +40,7 @@ $("#myImage").attr("src", _.first(products).picture_url);
 //var lastprice = _.last(products).price;
 //var picture_url = _.last(products).picture_url;
 
-$("#lastname").append(_.last(products).name);
+$("#lastname, item1").append(_.last(products).name);
 $("#lastcategory").append(_.last(products).category);
 $("#lastsellingPoints").append(_.last(products).selling_points);
 $("#lastprice").append(_.last(products).price);
@@ -62,9 +62,15 @@ $('#booksAvailable').append(loopy(_.filter(products, function(item, key) {
 
 function loopy(a){
 	for (var i = 0; i < a.length; i++) {
-		$('#booksAvailable').append(a[i].name + '<br>');
+		$('#booksAvailable')
+		.append(a[i].name + ' ')
+		.append('$' + a[i].price + '<br>')
+		.append("About: " + a[i].selling_points + '<br></p>');
 		};
 };
+
+// ^^^ I want to adjust this section so that all of the information for each
+// book is listed including the cover ^^^
 
 //The following is the _.reject() exercise...
 
@@ -130,6 +136,150 @@ function loopyFive(a) {
 
 //The following is the reduce exercise...
 
+var item0 = false, item1 = false, item2 = false, item3 = false, item4 = false, item5 = false;
+var totalCost = 0;
+
+//This is the loop that creates the individual titles to show on the screen
+for (var i = 0; i < products.length; i++) {
+	$('div#itemList').append('<p id=\'item' + [i] + '\'' + ' ' + 'class=\'item' + [i] + '\'>'
+							 + products[i].name + ' $' + products[i].price + '<br> </p>');
+};
+
+//Item 1
+$('#item0').on('click', function() {
+			item0 = item0 ? false : true;
+			if (item0 == true) {
+			$(this).css('background', 'yellow');
+			totalCost += products[0].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			} else {
+			$(this).css('background', 'white');
+			totalCost -= products[0].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			};
+		});
+
+//I created a for loop to take out this code, I only had 6 products but what if I had 1,000 products
+//I would need to create a loop which I did above
+/*$('.item1').append(products[0].name + ' ')
+			.append('$' + products[0].price + '<br>');*/
+
+//Item 2 
+$('#item1').on('click', function() {
+			item1 = item1 ? false : true;
+			if (item1 == true) {
+			$(this).css('background', 'yellow');
+			totalCost += products[1].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			} else {
+			$(this).css('background', 'white');
+			totalCost -= products[1].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			};
+
+		});
+
+//I created a for loop to take out this code, I only had 6 products but what if I had 1,000 products
+//I would need to create a loop which I did above
+/*$('.item2').append(products[1].name + ' ')
+			.append('$' + products[1].price + '<br>');*/
+
+//Item 3
+$('#item2').on('click', function() {
+			item2 = item2 ? false : true;
+			if (item2 == true) {
+			$(this).css('background', 'yellow');
+			totalCost += products[2].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			} else {
+			$(this).css('background', 'white');
+			totalCost -= products[2].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			};
+
+		});
+
+//I created a for loop to take out this code, I only had 6 products but what if I had 1,000 products
+//I would need to create a loop which I did above
+/*$('.item3').append(products[2].name + ' ')
+			.append('$' + products[2].price + '<br>');
+*/
+//Item 4
+$('#item3').on('click', function() {
+			item3 = item3 ? false : true;
+			if (item3 == true) {
+			$(this).css('background', 'yellow');
+			totalCost += products[3].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			} else {
+			$(this).css('background', 'white');
+			totalCost -= products[3].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			};
+
+		});
+
+/*$('.item4').append(products[3].name + ' ')
+			.append('$' + products[3].price + '<br>');*/
+
+//I created a for loop to take out this code, I only had 6 products but what if I had 1,000 products
+//I would need to create a loop which I did above
+//Item 5
+$('#item4').on('click', function() {
+			item4 = item4 ? false : true;
+			if (item4 == true) {
+			$(this).css('background', 'yellow');
+			totalCost += products[4].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			} else {
+			$(this).css('background', 'white');
+			totalCost -= products[4].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			};
+
+		});
+
+/*$('.item5').append(products[4].name + ' ')
+			.append('$' + products[4].price + '<br>');*/
+
+//I created a for loop to take out this code, I only had 6 products but what if I had 1,000 products
+//I would need to create a loop which I did above
+//Item 6
+$('#item5').on('click', function() {
+			item5 = item5 ? false : true;
+			if (item5 == true) {
+			$(this).css('background', 'yellow');
+			totalCost += products[5].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			} else {
+			$(this).css('background', 'white');
+			totalCost -= products[5].price;
+			$('.totalCost').text('Total Cost: $' + totalCost.toFixed(2));
+			};
+
+		});
+
+//I created a for loop to take out this code, I only had 6 products but what if I had 1,000 products
+//I would need to create a loop which I did above
+/*$('.item6').append(products[5].name + ' ')
+			.append('$' + products[5].price + '<br>');*/
+
+//Below here is just my garbage bin
+
+//$('.totalCost')
+/*$('#item1').on('click', function() {
+	$(this).append(loopySix(_.pluck(products[0], name)));
+};
+
+function loopySix(a){
+	for (var i = 0; i < a.length; i++) {
+		$('#item1').append(a[i].name + ' ');
+		$('#item1').append('$' + a[i].price + '<br>');
+		};
+};*/
+
+
+	
 
 
 
