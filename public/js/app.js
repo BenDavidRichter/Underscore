@@ -118,6 +118,12 @@ function loopyFour(a){
 		};
 };
 
+//I thought maybe this below would work somehow in the loopyFour function above but it didn't
+/*function loopyFour(a){
+	for (var i = 0; i < a.length; i++) {
+		$('img#photosGoHere').append('<img id=\'photosGoHere\' ' + 'src=' + a[i].picture_url + ' ' + '/> <br>');
+		};*/
+
 // ^^^ I am only getting the last image on the screen, I will come back later ^^^
 
 //The following is the pluck exercise...
